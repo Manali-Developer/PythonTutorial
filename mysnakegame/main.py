@@ -1,15 +1,12 @@
-from turtle import Turtle,Screen
+from turtle import Screen
 from snake import Snake
 from food import Food
 from scoreboard import Scoreboard
 import time
 
-"""Imported all related modules n classes"""
-
 LEVELOFDIFFICULTY={1:0.4,2:0.3,3:0.1}
 TIME=0.1
 
-"""Constants"""
 
 if __name__ == '__main__':
     """Screen setup"""
@@ -25,8 +22,8 @@ if __name__ == '__main__':
     scoreboard=Scoreboard()
 
     """selection of level of difficulty by user"""
-
     scoreboard.difficulty()
+
     """Movement control of snake with arrow keys"""
     screen.tracer(0)
     screen.listen()
@@ -49,7 +46,6 @@ if __name__ == '__main__':
             scoreboard.increase_score()
 
         """detect collision with wall"""
-
         if snake.head.xcor()>240 or snake.head.xcor()<-240 or snake.head.ycor()>240 or snake.head.ycor()<-240:
             print("head collided")
             scoreboard.gameover()

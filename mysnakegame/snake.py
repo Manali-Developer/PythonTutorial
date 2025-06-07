@@ -1,7 +1,4 @@
 from turtle import Turtle
-import time
-
-"""Imported all related modules n classes"""
 
 STARTING_POSITIONS=[(0,0),(-20,0),(-40,0)]
 MOVE_DISTANCE=20
@@ -10,9 +7,8 @@ DOWN=270
 LEFT=180
 RIGHT=360
 
-"""Constants"""
-
 class Snake:
+    """This class have everything related to snake """
 
     def __init__(self):
         self.segments=[]
@@ -32,14 +28,12 @@ class Snake:
         newsegment.goto(position)
         self.segments.append(newsegment)
 
-    """Extending the snake once it eats food"""
-
     def extend(self):
+        """Extending the snake once it eats food"""
         self.add_segment(self.segments[-1].position())
 
-    """Movements of snake"""
-
     def move(self):
+        """Movements of snake"""
         for seg in range(len(self.segments)-1,0,-1):
             newx=self.segments[seg-1].xcor()
             newy=self.segments[seg-1].ycor()
@@ -47,17 +41,21 @@ class Snake:
         self.head.forward(MOVE_DISTANCE)
 
     def up(self):
+        """Movements of snake in upwards direction."""
         if self.head.heading()!=DOWN:
             self.head.setheading(UP)
 
     def down(self):
+        """Movements of snake in downwards direction."""
         if self.head.heading()!=UP:
             self.head.setheading(DOWN)
 
     def left(self):
+        """Movements of snake in left direction."""
         if self.head.heading()!=RIGHT:
             self.head.setheading(LEFT)
 
     def right(self):
+        """Movements of snake in right direction."""
         if self.head.heading()!=LEFT:
             self.head.setheading(RIGHT)

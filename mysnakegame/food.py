@@ -1,9 +1,9 @@
 from turtle import Turtle
 import random
 
-"""Imported all related modules n classes"""
-
 class Food(Turtle):
+    """Resposible to generate food on random locations"""
+    
     def __init__(self):
         super().__init__()
         self.shape('circle')
@@ -12,10 +12,9 @@ class Food(Turtle):
         self.color('yellow')
         self.speed('fastest')
         self.refresh()
-
-    """Puttinf new food once food gets eaten"""
-    
+   
     def refresh(self):
+        """Putting new food once food gets eaten"""
         randomx=random.randint(-230,-230)
         randomy=random.randint(-230,230)
         self.goto(randomx,randomy)
