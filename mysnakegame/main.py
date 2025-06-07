@@ -52,10 +52,8 @@ if __name__ == '__main__':
             game_is_on=False
 
         """detect collision with tail"""
-        for segment in snake.segments:
-            if segment==snake.head:
-                pass
-            elif snake.head.distance(segment)<10:
+        for segment in snake.segments[1:]:
+            if snake.head.distance(segment)<10:
                 game_is_on=False
                 scoreboard.gameover()   
     screen.exitonclick()
